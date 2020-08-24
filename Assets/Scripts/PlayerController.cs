@@ -24,9 +24,13 @@ public class PlayerController : MonoBehaviour
     public Rigidbody2D rb;
     public GameObject hands;
     public GameObject ball;
+
+    // camera controller
+    public CameraController camera;
     // Start is called before the first frame update
     void Start()
     {
+        camera.Setup(() => transform.position);
         Vector3 target = transform.position;
         target.y = target.y - 0.45f;
         hands.transform.position = target;
